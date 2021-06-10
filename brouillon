@@ -1,0 +1,111 @@
+fetch ("http://localhost:3000/api/teddies")
+
+.then (data => data.json())
+.catch((error)=>{
+  console.log(error);
+
+  document.querySelector(".produits__page").innerHTML += `<div class="text-center col-12>
+  <h2> Site indisponible pour le moment</h2>
+  </div>
+  `;
+})
+
+
+.then(jsonListOurs => {
+  for (let jsonListOurs of jsonListOurs){
+    document.querySelector(".produits__page").innerHTML += `<div class="product col-12 col-md-6 col-lg-4 col-xl-3">
+    <div class = "card-article">
+    <img src="${jsonOurs.imageUrl}" class="card-img-top" height="250">
+    <h5 class="card-title d-flex justify-content-between">${jsonOurs.name}</h5>
+    <p class="card-text">${jsonOurs.price/100 + ',00' + '' +  "\u20ac"} </p>
+    <a href="../product/product.html?id=${jsonOurs._id}" >Acc\u00E9d\u009 \u00E0 l'article </a>
+    </div>
+    </div>
+    </div>
+    `;
+  };
+  })
+  .catch((error)=>{
+    console.log(error);
+  });
+
+SECONd ESSAI
+
+
+let teddies={name:"",description:"",price:"",imageUrl:""};
+
+
+fetch ("http://localhost:3000/api/teddies")
+.then(data=>data.json())
+
+
+let newHtmlStr =
+ `<h2>${teddies.name},</h2>
+  <p>${teddies.description}</p>
+  <p>Prix :${teddies.price}"</p>
+  <img src= ${teddies.imageUrl} />` ;
+
+
+console.log(newHtmlStr);
+  
+  document.getElementById("main");
+  
+
+
+
+
+
+
+  TROiSIEMe ESSAI 
+  
+  main()
+
+async function main() {
+  const articles = await getArticles()
+  
+  for (article of articles) {
+    displayArticle(article)
+
+  }
+}
+
+function getArticles() {
+  return fetch("http://localhost:3000/api/teddies")
+  .then(function (httpBodyResponse) {
+    return httpBodyResponse.json();
+  })
+  .then(function(articles){
+  })
+  .catch(function(error){
+    alert(error)
+  })
+}
+
+function displayArticles(produit) {
+  document.getElementById("main").innerHTML +=
+  `
+  <h2>${article.name},</h2>
+  <p>${article.description}</p>
+  <p>Prix :${article.price}"</p>
+  <img src= ${article.imageUrl} />`
+}
+
+
+
+
+QUATRIEME ESSAI
+fetch ("http://localhost:3000/api/teddies")
+  .then(function(res) {
+    if (res.ok) {
+      return res.json();
+    }
+  })
+  .then(function(value) {
+    document
+    .getElementById("main")
+    .innerText = value;
+  })
+   .catch(function(err) {
+    // Une erreur est survenue
+  });
+
