@@ -1,0 +1,116 @@
+results.innerHTML = 
+        `
+        <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+          <div class="col-md-6">
+            <img class="card-img-top mb-5 mb-md-0" src="${produits.imageUrl}" />
+          </div>
+          <div class="col-md-6">
+            <h1 class="display-5 fw-bolder">${produits.name}</h1>
+            <div class="fs-5 mb-5">
+              <span>${produits.description}</span>
+            </div>
+            <p class="lead">
+            ${produits.price}
+            </p>
+            <div class="d-flex">
+              <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
+                style="max-width: 3rem" />
+              <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                <i class="bi-cart-fill me-1"></i>
+                Ajouter au panier
+              </button>
+            </div>
+            </br>
+            <div class="dropdown">
+              <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown">
+                Personnaliser la couleur
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Couleur1</a>
+                <a class="dropdown-item" href="#">Couleur2</a>
+                <a class="dropdown-item" href="#">Couleur3</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+        `;
+
+;
+
+//: crée le modèle html à insérer
+
+showProduits();
+
+
+
+
+
+const fetchTeddies = async () => {
+  teddies = await fetch(`http://localhost:3000/api/teddies/${id}`).then((res) =>
+    res.json()
+    
+  );
+  
+};
+
+const showTeddies = async () => {
+  await fetchTeddies();
+//: ??
+
+  results.innerHTML = 
+        `
+
+        
+        <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+          <div class="col-md-6">
+            <img class="card-img-top mb-5 mb-md-0" src="${teddy.imageUrl}" />
+          </div>
+          <div class="col-md-6">
+            <h1 class="display-5 fw-bolder">${teddy.name}</h1>
+            <div class="fs-5 mb-5">
+              <span>${teddy.description}</span>
+            </div>
+            <p class="lead">
+            ${teddy.price}
+            </p>
+            <div class="d-flex">
+              <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
+                style="max-width: 3rem" />
+              <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                <i class="bi-cart-fill me-1"></i>
+                Ajouter au panier
+              </button>
+            </div>
+            </br>
+            <div class="dropdown">
+              <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown">
+                Personnaliser la couleur
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Couleur1</a>
+                <a class="dropdown-item" href="#">Couleur2</a>
+                <a class="dropdown-item" href="#">Couleur3</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+        
+
+        `
+    
+    .join("");
+};
+
+//: crée le modèle html à insérer
+
+showTeddies();

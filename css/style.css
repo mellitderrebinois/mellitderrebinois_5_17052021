@@ -4,3 +4,13 @@
         margin-bottom: 10px; /* Added */
         margin-top: 10px; /* Added */
 }
+
+
+a{
+        text-decoration: none;
+        color: black;
+}
+
+a:hover{
+        color: black;
+}
