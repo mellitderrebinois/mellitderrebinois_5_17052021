@@ -1,0 +1,21 @@
+footer {
+  background-color: rgba(243, 233, 241);
+
+  position: absolute;
+
+  bottom: 0;
+
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+.navbar {
+  background-color: rgb(243, 233, 241);
+}

@@ -1,16 +1,37 @@
 .card {
-        margin: 0 auto; /* Added */
-        float: none; /* Added */
-        margin-bottom: 10px; /* Added */
-        margin-top: 10px; /* Added */
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  margin-top: 10px; /* Added */
 }
 
-
-a{
-        text-decoration: none;
-        color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-a:hover{
-        color: black;
+a:hover {
+  color: black;
+}
+
+.navbar {
+  background-color: rgb(243, 233, 241);
+  
+}
+
+footer {
+  background-color: rgba(243, 233, 241);
+}
+
+.nav-link{
+  color: black;
+  font-size: 1.4rem;
+  
+  
+}
+
+.navbar{
+  justify-content: space-between;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }

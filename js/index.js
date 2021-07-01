@@ -25,7 +25,7 @@ const showTeddies = async () => {
             <div class="card-body">
               <h5 class="card-title">${teddy.name}</h5>
               <p class="card-text">${teddy.description}</p>
-              <p class="card-text">Prix : ${teddy.price} euros</p>
+              <p class="card-text">Prix : ${teddy.price/100} euros</p>
               <a href="produit.html?id=${teddy._id}" class="btn btn-outline-dark">Voir</a>
 
             </div>
